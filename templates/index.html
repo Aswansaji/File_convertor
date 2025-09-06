@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>File Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">File Converter</h1>
+      <form method="post" enctype="multipart/form-data" class="mb-3">
+        <div class="mb-3">
+          <input type="file" name="file" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <select name="format" class="form-select">
+            <option value="pdf">PDF</option>
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload & Convert</button>
+      </form>
+      {% if converted_filename %}
+        <div class="alert alert-success">
+          File converted: {{ converted_filename }}<br>
+          <a href="/download/{{ converted_filename }}" class="btn btn-success mt-2">Download converted file</a>
+        </div>
+      {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

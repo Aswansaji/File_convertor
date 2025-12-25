@@ -26,9 +26,7 @@
           <div class="card shadow-sm">
             <div class="card-body">
               <h2 class="card-title">Upload & Convert</h2>
-              {% if error %}
-                <div class="alert alert-danger">{{ error }}</div>
-              {% endif %}
+              
 
               <form id="uploadForm" method="post" enctype="multipart/form-data">
                 <div id="dropzone" class="dropzone mb-3" tabindex="0">
@@ -54,12 +52,12 @@
 
               <div id="previewArea" class="text-center"></div>
 
-              {% if converted_filename %}
+              
                 <div class="alert alert-success mt-3 d-flex justify-content-between align-items-center">
-                  <div>Converted: <strong>{{ converted_filename }}</strong></div>
-                  <a href="/download/{{ converted_filename }}" class="btn btn-success">Download</a>
+                  <div>Converted: <strong>sample_d842e92159f9453eb79546205a525f37.pdf</strong></div>
+                  <a href="/download/sample_d842e92159f9453eb79546205a525f37.pdf" class="btn btn-success">Download</a>
                 </div>
-              {% endif %}
+              
 
               <div class="mt-3 small-muted">Allowed: JPG, PNG, PDF. Max 16 MB.</div>
             </div>
